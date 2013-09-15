@@ -1,0 +1,128 @@
+#module-filedrop 
+{ 
+	background: #414040 url('/resources/images/bg-linen-dark.png'); 
+	border: 1px solid #222; 
+	border-radius: 8px; 
+	box-shadow: 0 0 10px #111; 
+	width: 100%;
+	
+	header { 
+		background: #ddd url('/resources/images/private/filedrop/header.png') repeat-x bottom; 
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+		border-bottom: 1px solid #111; 
+		height: 30px; 
+	}
+	
+	footer { 
+		background: #ddd url('/resources/images/private/filedrop/header.png') repeat-x top; 
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+		border-top: 1px solid #222;
+		clear: both; 
+		height: 20px; 
+	}
+	
+	#folder-list 
+	{ 
+		background: rgba(0,0,0,.5); border-right: 1px solid #444; float: left; height: 400px; overflow: scroll; padding: 10px 0; width: 22%;
+		
+		h3 { display: none; }
+		li 
+		{ 
+			color: #a8a4a4; cursor: pointer; height: 22px; line-height: 22px; margin: 2px 0; vertical-align: middle;
+			
+			ul 
+			{ 
+				padding: 6px 0; 
+				
+				#folder-new { background: url('/resources/images/private/filedrop/border-thin.png') no-repeat top; margin-top: 5px; padding-top: 5px; }
+				#folder-new em { background-position: 20px -96px; color: #318c97; font-style: none; }
+				#folder-new:hover em { background-position: 20px -146px; color: #3dafbd; }
+			}			
+		}
+		li.parent 
+		{ 
+			background: url('/resources/images/private/filedrop/border-thin.png') no-repeat bottom; margin: 5px 0;
+		
+			strong { 
+				background: url('/resources/images/private/filedrop/arrows.png') no-repeat 10px 8px; 
+				display: block; 
+				font-size: 12px;
+				padding-left: 25px;
+			}
+			
+			span { color: #fff; display: none; float: right; font-size: 11px; padding-right: 10px; }
+			span.delete { color: #f00; }
+			span.rename { color: #ebb100; }
+			
+			li:hover, li.selected, li.editing { background: url('/resources/images/private/filedrop/li-hover.png') repeat-x; }
+			li:hover 
+			{ 
+				background-position: 0 -60px;
+				
+				span { display: block; } 
+			}
+			li.selected { background-position: 0 0; }
+			li.editing { background-position: 0 -120px; color: #fff; }
+			
+			em, input[type="text"] {  
+				background: url('/resources/images/private/filedrop/folders.png') no-repeat 20px 5px;
+				border: none;
+				border-radius: 0;
+				box-shadow: none;
+				display: block;
+				float: left;
+				font-size: 11px;
+				font-style: normal;
+				height: auto;
+				line-height: 11px;
+				margin: 0;
+				padding: 5px 20px 5px 47px;
+				text-shadow: none;
+				width: auto;
+			}
+			li:hover em, li.selected em, li.editing input { background-position: 20px -45px; color: #fff; }
+		}	
+		
+	}
+	
+	#file-upload
+	{
+		background: url('/resources/images/bg-linen.png'); 
+		display: none;
+		float: left; 
+		height: 380px; 
+		padding: 20px 2%; 
+		width: 0;
+	}
+	
+	#file-list
+	{
+		float: right; text-shadow: 0 1px 1px #000; width: 73.9%;
+		
+		li 
+		{ 
+			float: left; margin: 1px; padding: 10px; 
+			
+			span { display: block; padding: 70px 0 0 0; text-align: center; width: 95px; }
+		}
+		li:hover { background: rgba(0,0,0,.5); border: 1px solid #333; border-radius: 5px; margin: 0; } 
+			
+		.files, .folders { clear: both; margin: 0 20px; padding: 50px 0; }
+		
+		.files 
+		{ 
+			background: url('/resources/images/private/filedrop/header-files.png') no-repeat center 25px; 
+			
+			span { background: url('/resources/images/private/filedrop/file-text.png') no-repeat center top; }
+		}
+		
+		.folders 
+		{ 
+			background: url('/resources/images/private/filedrop/header-folders.png') no-repeat center 25px; 
+			
+			span { background: url('/resources/images/private/filedrop/file-folder.png') no-repeat center top; }
+		}
+	}
+}
